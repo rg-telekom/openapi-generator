@@ -48,7 +48,9 @@ public abstract class AbstractTemplatingEngineAdapter implements TemplatingEngin
      * @return The full path, without extension (e.g. /path/to/file.txt => /path/to/file)
      */
     private String getPathWithoutExtension(String location) {
-        if (location == null) return null;
+        if (location == null) {
+            return null;
+        }
         int idx = location.lastIndexOf('.');
         if (idx == -1) return location;
         return location.substring(0, idx);
